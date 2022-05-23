@@ -1,0 +1,8 @@
+.pet-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  row-gap: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,32 @@
+:root {
+  --gray: #34495e;
+  --darkgray: #2c3e50;
+}
+
+label {
+  display: block;
+}
+
+.form-select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+
+.form-select {
+  position: relative;
+  display: flex;
+  width: 12rem;
+  height: 3rem;
+  border-radius: .25em;
+  overflow: hidden;
+}

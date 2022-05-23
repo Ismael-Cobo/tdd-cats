@@ -1,0 +1,7 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}

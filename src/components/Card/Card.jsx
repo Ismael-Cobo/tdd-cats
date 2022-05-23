@@ -19,13 +19,12 @@ export const Card = ({
   }
 
   return (
-    <div className='card'>
+    <article className='card'>
       <div className="card-header">
         <img src={image.url} alt={image.alt} className='card-img' aria-label={name} />
         <button
           className='heart'
           onClick={handleClick}
-          lang={fav}
         >
           <img
             src={isFavoured ? filledHeart : outlinedHeart}
@@ -37,6 +36,6 @@ export const Card = ({
         <p>{phone}</p>
         <p>{email}</p>
       </div>
-    </div>
+    </article>
   )
 }

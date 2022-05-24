@@ -1,7 +1,16 @@
 .app-container {
   display: flex;
-  flex-direction: row;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
+}
+
+@media (min-width: 556px) {
+  .app-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    align-items: unset;
+    margin-bottom: 3rem;
+  }
 }

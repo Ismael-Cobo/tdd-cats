@@ -5,18 +5,22 @@ import outlinedHeart from '../../svg/outlinedHeart.svg'
 import './card.css'
 
 export const Card = ({
+  id,
   name,
   email,
   phone,
   image,
-  fav
+  favoured,
+  onFav
 }) => {
 
-  const [isFavoured, setIsFavoured] = useState(fav)
+  const [isFavoured, setIsFavoured] = useState(favoured)
 
-  const handleClick = () => {
+  const handleClick = (id) => {
     setIsFavoured(!isFavoured)
+    onFav(id)
   }
+
 
   return (
     <article className='card'>
@@ -24,11 +28,12 @@ export const Card = ({
         <img src={image.url} alt={image.alt} className='card-img' aria-label={name} />
         <button
           className='heart'
-          onClick={handleClick}
+          onClick={() => handleClick(id)}
         >
           <img
             src={isFavoured ? filledHeart : outlinedHeart}
-            alt={`${isFavoured ? 'filled heart' : 'outlined heart'}`} />
+            alt={`${isFavoured ? 'filled heart' : 'outlined heart'}`}
+          />
         </button>
       </div>
       <div className="card-content">

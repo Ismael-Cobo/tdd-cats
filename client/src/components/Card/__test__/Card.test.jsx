@@ -19,7 +19,7 @@ describe('Card test', () => {
   test('should show a name of cat card', () => {
 
     render(
-      <Card {...cardProps} />
+      <Card {...cardProps} onFav={jest.fn()} />
     )
 
     expect(screen.getByText(cardProps.name)).toBeInTheDocument()
@@ -28,7 +28,7 @@ describe('Card test', () => {
   test('should show a email of cat card', () => {
 
     render(
-      <Card {...cardProps} />
+      <Card {...cardProps} onFav={jest.fn()} />
     )
 
     expect(screen.getByText(cardProps.email)).toBeInTheDocument()
@@ -37,7 +37,7 @@ describe('Card test', () => {
   test('should show a phone of cat card', () => {
 
     render(
-      <Card {...cardProps} />
+      <Card {...cardProps} onFav={jest.fn()} />
     )
 
     expect(screen.getByText(cardProps.phone)).toBeInTheDocument()
@@ -46,7 +46,7 @@ describe('Card test', () => {
   test('should show a image of cat card', () => {
 
     render(
-      <Card {...cardProps} />
+      <Card {...cardProps} onFav={jest.fn()} />
     )
 
     expect(screen.getByRole('img', { name: cardProps.name })).toHaveAttribute('src', cardProps.image.url)
@@ -55,21 +55,21 @@ describe('Card test', () => {
   })
 
   test('should show outlined heart', () => {
-    render(<Card {...cardProps} />)
+    render(<Card {...cardProps} onFav={jest.fn()} />)
 
     expect(screen.queryByAltText('filled heart')).not.toBeInTheDocument()
     expect(screen.getByAltText('outlined heart')).toBeInTheDocument()
   })
 
   test('should show filled heart on click', () => {
-    render(<Card {...cardProps} fav={true} />)
+    render(<Card {...cardProps} onFav={jest.fn()} favoured={true} />)
 
     expect(screen.queryByAltText('outlined heart')).not.toBeInTheDocument()
-    expect(screen.getByAltText('filled heart')).toBeInTheDocument()
+    expect(screen.queryByAltText('filled heart')).toBeInTheDocument()
   })
 
   test('should toggle heart status', async () => {
-    render(<Card {...cardProps} />)
+    render(<Card {...cardProps} onFav={jest.fn()} />)
 
 
     await userEvent.click(screen.getByRole('button'))

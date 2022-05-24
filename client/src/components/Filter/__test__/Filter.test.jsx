@@ -6,7 +6,7 @@ describe('Filter component', () => {
 
   test('should be able to change value of favourite select', async () => {
 
-    render(<Filter />)
+    render(<Filter setFilters={jest.fn()} />)
 
     const favourite = screen.getByLabelText('Favourite')
     expect(favourite.value).toBe('any')
@@ -21,7 +21,7 @@ describe('Filter component', () => {
 
   test('should be able to change value of gender select', async () => {
 
-    render(<Filter />)
+    render(<Filter setFilters={jest.fn()} />)
 
     const gender = screen.getByLabelText('Gender')
     expect(gender.value).toBe('any')
